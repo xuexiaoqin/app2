@@ -37,10 +37,19 @@ int main()
             char x;
             scanf("%c", &x);
             scanf("%c", &x);
-
         }
         if (code == 3)
         {
+            printf("显示全部敏感词\n");
+            for (int i = 0; i < index;i++)
+            {
+                printf("所有敏感字符为%c\n",arr[i]);
+            }
+            printf("显示成功，点击回车继续\n");
+            char x;
+            scanf("%c", &x);
+            scanf("%c", &x);
+
         }
         if (code == 4)
         {
