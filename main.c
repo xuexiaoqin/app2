@@ -1,6 +1,26 @@
 #include <stdio.h>
 char arr[1024];
 int index = 0;
+int MG(char x)
+{
+    int count = 0;
+    for (int i; i < index; i++)
+    {
+        if (x == arr[i])
+        {
+            count++;
+        }
+    }
+    if (count == 0)
+    {
+        return 0;
+    }
+    else
+
+    {
+        return 1;
+    }
+}
 int main()
 {
 
@@ -41,18 +61,40 @@ int main()
         if (code == 3)
         {
             printf("显示全部敏感词\n");
-            for (int i = 0; i < index;i++)
+            for (int i = 0; i < index; i++)
             {
-                printf("所有敏感字符为%c\n",arr[i]);
+                printf("所有敏感字符为%c\n", arr[i]);
             }
             printf("显示成功，点击回车继续\n");
             char x;
             scanf("%c", &x);
             scanf("%c", &x);
-
         }
         if (code == 4)
         {
+            printf("请输入一段英文:\n");
+            char nr[1024];
+            scanf("%s", nr);
+            for (int i = 0; 1; i++)
+            {
+                if (nr[i] == '\0')
+                {
+                    break;
+                }
+                char x = nr[i];
+                int r = MG(x);
+                if (r == 1)
+                {
+                    nr[i] = '*';
+                }
+                printf("%c", nr[i]);
+            }
+            printf("\n");
+
+            printf("替换完成，点击回车继续\n");
+            char x;
+            scanf("%c", &x);
+            scanf("%c", &x);
         }
         if (code == 5)
         {
